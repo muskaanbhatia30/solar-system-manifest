@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: solar-system-container
-        image: muskaan810/nodemongoapp:$GIT_COMMIT
+        image: muskaan810/nodemongoapp:4913e690b4a6c7229f098876e53d0da42f1164cf
         ports:
         - containerPort: 3000
         envFrom:
