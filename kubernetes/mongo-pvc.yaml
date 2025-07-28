@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-data-pv
+  namespace: solar-system-ns
+spec:
+  capacity: { storage: 5Gi }
+  accessModes: [ReadWriteOnce]
+  hostPath:
+    path: /mnt/data/mongodb
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-data-pvc
+  namespace: solar-system-ns
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests: { storage: 5Gi }
