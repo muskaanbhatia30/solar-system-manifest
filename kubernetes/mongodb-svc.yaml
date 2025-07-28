@@ -1,14 +1,16 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: mongodb-svc
   namespace: solar-system-ns
+  labels:
+    app: mongodb
 spec:
   type: ClusterIP
   selector:
     app: mongodb
   ports:
-  - port: 27017
+  - name: mongodb
+    port: 27017
     targetPort: 27017
     protocol: TCP
-    name: mongodb

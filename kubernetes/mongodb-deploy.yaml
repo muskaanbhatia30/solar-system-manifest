@@ -16,13 +16,12 @@ spec:
         app: mongodb
     spec:
       containers:
-      - name: mongo
-        image: mongo:latest
+      - name: mongodb
+        image: mongo:5.0
         ports:
         - containerPort: 27017
+          name: mongodb
         env:
-        - name: MONGO_INITDB_DATABASE
-          value: solarsystemdb       
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
